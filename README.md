@@ -4,7 +4,7 @@ A learning purpose project:
 # Usage
 go run goscan.go IP
 # Features:
-Find open ports on target IP
+Find open ports on target IP<br/>
 input open ports into nmap for service scan
 
 # Todo:
