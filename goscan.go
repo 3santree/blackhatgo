@@ -89,5 +89,5 @@ func nmap(ip string, open_ports []int) {
 }
 
 func print_banner() {
-	fmt.Println(banner.Inline("goGun"))
+	fmt.Println(banner.Inline("goScan"))
 }
