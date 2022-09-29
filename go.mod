@@ -1,4 +1,4 @@
-module goscan
+module github.com/3santree/goscan
 
 go 1.18
 
