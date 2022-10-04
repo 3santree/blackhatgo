@@ -75,7 +75,7 @@ func scanner(id int, ip string, ports <-chan int, open_ports chan int) {
 func nmap(ip string, open_ports []int) {
 
 	ports := strings.Trim(strings.Join(strings.Fields(fmt.Sprint(open_ports)), ","), "[]")
-	command := "nmap " + ip + " -p" + ports + " -sC -sV -T4 -oN " + ip + ".nmap"
+	command := "nmap " + ip + " -p" + ports + " -sC -sV -T4 -oN -Pn" + ip + ".nmap"
 	fmt.Println("Running Command:", command)
 	out, err := exec.Command("bash", "-c", command).Output()
 
