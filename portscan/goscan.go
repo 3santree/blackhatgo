@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"moul.io/banner"
 	"net"
 	"os"
 	"os/exec"
@@ -10,13 +9,15 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"moul.io/banner"
 )
 
 func main() {
 	print_banner()
 	if len(os.Args) <= 1 {
 		fmt.Println("Usage:")
-		fmt.Println("goscan IP")
+		fmt.Println("\tgoscan IP")
 		return
 	}
 	ip := os.Args[1]
@@ -48,12 +49,12 @@ func main() {
 
 	// Will hang if not close
 	close(open_ports_channel)
-	
+
 	//Getting open ports
 	for open_port := range open_ports_channel {
 		open_ports = append(open_ports, open_port)
 	}
-	
+
 	//fmt.Println(strings.Trim(strings.Join(strings.Fields(fmt.Sprint(open_ports)), ","), "[]"))
 	nmap(ip, open_ports)
 }
